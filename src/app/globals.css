@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #fff;
+  --lin: linear-gradient(135deg, #fdc60b 0%, #ed6b3b 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000;
+    --lin: linear-gradient(135deg, #fdc60b 0%, #ed6b3b 100%);
+  }
+}
+
+body {
+  background: var(--bg);
+}
+
+@layer utilities {
+  .bg-lin {
+    background: var(--lin);
+  }
+  .text-lin {
+    background: var(--lin);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @apply bg-clip-text;
+  }
+
+  /*  COntainer */
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1200px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .container {
+      max-width: 1440px;
+    }
+  }
+
+  /* Information */
+
+  .linear_card {
+    background: linear-gradient(
+      180deg,
+      rgba(247, 99, 12, 0.1) 0%,
+      rgba(247, 99, 12, 0) 100%
+    );
+    @apply rounded-[40px] border-2 border-solid border-transparent p-10;
+  }
+}
