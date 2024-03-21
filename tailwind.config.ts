@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors');
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   darkMode: 'class',
   content: [
@@ -28,6 +30,15 @@ module.exports = {
       secondary: colors.pink,
       'M3-sys-dark-on-surface': '#F1DFD9',
       'M3-state-layers-dark-on-primary': 'rgba(56, 30, 114)',
+      'M3-sys-dark-surface-container-highest': '#3D322E',
+      'M3-sys-dark-primary': '#FFB597',
+      'M3-sys-dark-outline': '#A08D86',
+      'M3-sys-dark-on-surface-variant': '#D8C2BA',
+      black0d: '#0D0D0D',
+    },
+    screens: {
+      'max-xl': { max: '1280px' },
+      ...defaultTheme.screens,
     },
   },
   plugins: [],

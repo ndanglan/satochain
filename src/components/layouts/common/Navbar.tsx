@@ -45,8 +45,8 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="container mx-auto flex flex-wrap items-center justify-between px-4 py-2 lg:py-4">
-        <div className="flex items-center gap-8">
+      <div className="container mx-auto flex flex-wrap items-center justify-between py-2 lg:py-4">
+        <div className="flex flex-1 items-center gap-8">
           <div className="flex items-center justify-center gap-2">
             <Image
               src={logo_primary.src}
@@ -54,7 +54,10 @@ const Navbar = () => {
               height={37}
               alt="logo_primary"
             />
-            <Link href={'/'} className="text-xl/[32px] font-bold text-white">
+            <Link
+              href={'/'}
+              className="text-xl/[32px] font-bold text-white max-xl:text-base/[24px]"
+            >
               Satochain
             </Link>
           </div>
@@ -62,7 +65,7 @@ const Navbar = () => {
             <ul className=" flex flex-row">
               {navLinks.map((link, index) => (
                 <li key={index} className="mx-0">
-                  <NavLink href={link.path} title={link.title} />
+                  <NavLink href={link.path} title={link.title} hot={link.hot} />
                 </li>
               ))}
             </ul>
@@ -72,6 +75,7 @@ const Navbar = () => {
           <Button
             intent={'linear'}
             variant={'outline'}
+            className="flex-1 max-xl:text-xs"
             leftIcon={
               <Image
                 src={unisat_icon.src}
@@ -86,6 +90,7 @@ const Navbar = () => {
           <Button
             intent={'linear'}
             variant={'outline'}
+            className="flex-1 max-xl:text-xs"
             leftIcon={
               <Image src={evm_icon.src} width={21} height={21} alt="evm_icon" />
             }
